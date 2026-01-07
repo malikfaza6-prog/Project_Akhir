@@ -1,12 +1,11 @@
 import csv
-import os
 from datetime import datetime, time
 
 # INPUT ABSEN DATANG
 class Absen:
     def __init__(self):
         self.date = datetime.now().time()
-        self.early = time(8, 0, 0)
+        self.ontime = time(8, 0, 0)
         self.late = time(9, 15, 0)
         self.nim = input("Masukan NIM Anda = ")
 
@@ -29,7 +28,7 @@ class Absen:
                 return
             return
         #LOGIKA PROGRAM ABSEN
-        if self.date <= self.early:
+        if self.date <= self.ontime:
             self.status = "Tepat Waktu"
         elif self.date <= self.late:
             self.status = "Terlambat"
@@ -74,3 +73,4 @@ class Absen:
             writer.writerow([self.nim, self.nama])
 
 absen1 = Absen()
+
