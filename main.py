@@ -12,10 +12,6 @@ class Absen:
         #CARI NIM
         self.nama = self.cari_nama()
 
-        if self.nama == "FILE_NOT_FOUND":
-            print("File data_mahasiswa.csv tidak ditemukan")
-            return
-
         if self.nama == "NIM_TIDAK_DITEMUKAN":
             pilih = input("NIM tidak terdaftar. Tambahkan NIM baru? (y/n): ").lower()
 
@@ -73,4 +69,5 @@ class Absen:
             writer.writerow([self.nim, self.nama])
 
 absen1 = Absen()
+
 
